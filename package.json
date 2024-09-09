@@ -1,7 +1,7 @@
 {
-  "name": "whatwg-url",
+  "name": "@yohane/whatwg-url-without-unicode",
   "version": "14.0.0",
-  "description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+  "description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery, without unicode support",
   "main": "index.js",
   "files": [
     "index.js",
@@ -10,21 +10,23 @@
   ],
   "author": "Sebastian Mayr <github@smayr.name>",
   "license": "MIT",
-  "repository": "jsdom/whatwg-url",
+  "repository": "yzyeengang/whatwg-url",
   "dependencies": {
-    "tr46": "^5.0.0",
     "webidl-conversions": "^7.0.0"
   },
   "devDependencies": {
     "@domenic/eslint-config": "^3.0.0",
+    "@types/node": "22",
+    "axios": "^1.7.7",
     "benchmark": "^2.1.4",
     "c8": "^8.0.1",
     "esbuild": "^0.19.5",
     "eslint": "^8.53.0",
+    "socks-proxy-agent": "^8.0.4",
     "webidl2js": "^17.1.0"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=21"
   },
   "scripts": {
     "coverage": "c8 node --test --experimental-test-coverage test/*.js",
