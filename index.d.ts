@@ -18,7 +18,7 @@ export type IPv6Address = [number, number, number, number, number, number, numbe
 export class URL {
   constructor(url: string, base?: string | URL);
 
-  public canParse(url: string, base?: string | URL): boolean;
+  static canParse(url: string, base?: string | URL): boolean;
 
   get href(): string;
   set href(V: string);
