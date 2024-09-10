@@ -1,16 +1,22 @@
 {
   "name": "@yohane/whatwg-url-without-unicode",
-  "version": "14.0.0",
+  "version": "14.0.5",
   "description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery, without unicode support",
   "main": "index.js",
+  "types": "index.d.ts",
   "files": [
     "index.js",
+    "index.d.ts",
     "webidl2js-wrapper.js",
     "lib/*.js"
   ],
   "author": "Sebastian Mayr <github@smayr.name>",
   "license": "MIT",
   "repository": "yzyeengang/whatwg-url",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "dependencies": {
     "webidl-conversions": "^7.0.0"
   },
