@@ -3,8 +3,8 @@
 const nodeResolve = require("@rollup/plugin-node-resolve");
 const commonjs = require("@rollup/plugin-commonjs");
 const terser = require("@rollup/plugin-terser");
-const babel = require("@rollup/plugin-babel");
-const { resolve } = require("node:path");
+// const babel = require("@rollup/plugin-babel");
+// const { resolve } = require("node:path");
 
 /** @type import('rollup').RollupOptions*/
 module.exports = {
@@ -25,15 +25,15 @@ module.exports = {
   plugins: [
     nodeResolve(),
     commonjs(),
-    terser(),
-    babel({
-      babelHelpers: "bundled",
-      include: [
-        "index.js",
-        "lib/**",
-        /webidl-conversions/u
-      ]
-    })
+    terser()
+    // babel({
+    //   babelHelpers: "bundled",
+    //   include: [
+    //     "index.js",
+    //     "lib/**",
+    //     /webidl-conversions/u
+    //   ]
+    // })
   ]
 };
 

@@ -1,6 +1,6 @@
 {
   "name": "@yohane/whatwg-url-without-unicode",
-  "version": "14.0.7",
+  "version": "14.0.8",
   "description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery, without unicode support",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
