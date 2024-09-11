@@ -15,3 +15,4 @@ lib/utils.js
 _site/
 
 .idea
+dist

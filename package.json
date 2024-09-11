@@ -1,14 +1,23 @@
 {
   "name": "@yohane/whatwg-url-without-unicode",
-  "version": "14.0.6",
+  "version": "14.0.7",
   "description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery, without unicode support",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./index.d.ts"
+    }
+  },
   "files": [
     "index.js",
     "index.d.ts",
     "webidl2js-wrapper.js",
-    "lib/*.js"
+    "lib/*.js",
+    "dist/*.js"
   ],
   "author": "Sebastian Mayr <github@smayr.name>",
   "license": "MIT",
@@ -21,13 +30,20 @@
     "webidl-conversions": "^7.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
     "@domenic/eslint-config": "^3.0.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
     "@types/node": "22",
     "axios": "^1.7.7",
     "benchmark": "^2.1.4",
     "c8": "^8.0.1",
     "esbuild": "^0.19.5",
     "eslint": "^8.53.0",
+    "rollup": "^4.21.2",
     "socks-proxy-agent": "^8.0.4",
     "webidl2js": "^17.1.0"
   },
@@ -40,7 +56,8 @@
     "prepare": "node scripts/transform.js",
     "pretest": "node scripts/get-latest-platform-tests.js && node scripts/transform.js",
     "build-live-viewer": "esbuild --bundle --format=esm --sourcemap --outfile=live-viewer/whatwg-url.mjs index.js",
-    "test": "node --test test/*.js"
+    "test": "node --test test/*.js",
+    "build": "rollup -c"
   },
   "c8": {
     "reporter": [
